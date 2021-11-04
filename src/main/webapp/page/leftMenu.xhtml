@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</h:head>
+<h:body class="main-body">
+	<h:form>
+		<p:growl id="messages" showDetail="true" />
+		<div class="card">
+			<h5>Toggleable</h5>
+			<p:menu toggleable="true">
+				<p:submenu label="Options">
+					<p:menuitem value="Save (Non-Ajax)" action="#{menuView.save}"
+						update="messages" ajax="false" icon="pi pi-save" />
+					<p:menuitem value="Update" action="#{menuView.update}"
+						update="messages" icon="pi pi-refresh" />
+					<p:menuitem value="Delete" action="#{menuView.delete}"
+						update="messages" icon="pi pi-times" />
+				</p:submenu>
+				<p:submenu label="Navigations">
+					<p:menuitem value="Website" url="http://www.primefaces.org"
+						icon="pi pi-external-link" />
+					<p:menuitem value="Internal" action="#{menuView.testLoad}"
+						icon="pi pi-upload" />
+					<p:menuitem value="Internal" action="#{menuView.testLoad1}"
+						icon="pi pi-upload" />
+				</p:submenu>
+			</p:menu>
+		</div>
+	</h:form>
+</h:body>
+</html>
