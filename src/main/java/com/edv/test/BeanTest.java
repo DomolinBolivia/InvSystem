@@ -2,11 +2,11 @@ package com.edv.test;
 
 import java.io.Serializable;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
 
+@Named	
 @RequestScoped
-@ManagedBean(name = "beanTest")
 public class BeanTest implements Serializable {
 
 	/**

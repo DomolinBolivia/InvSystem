@@ -1,16 +1,99 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:p="http://primefaces.org/ui"
 	xmlns:h="http://java.sun.com/jsf/html">
 
 <h:head>
-	<title>Hola Mundo JSF</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link type="text/css" rel="stylesheet"
+		href="#{request.contextPath}/faces/resources/theme.css" />
+	<link type="text/css" rel="stylesheet"
+		href="#{request.contextPath}/faces/resources/primeicons/primeicons.css" />
+	<link type="text/css" rel="stylesheet"
+		href="#{request.contextPath}/faces/resources/fa/font-awesome.css" />
+	<link type="text/css" rel="stylesheet"
+		href="#{request.contextPath}/faces/resources/components.css" />
+	<script type="text/javascript"
+		src="#{request.contextPath}/faces/resources/jquery/jquery.js"></script>
+	<script type="text/javascript"
+		src="#{request.contextPath}/faces/resources/core.js"></script>
+	<script type="text/javascript"
+		src="#{request.contextPath}/faces/resources/components.js"></script>
+	<script type="text/javascript"
+		src="#{request.contextPath}/faces/resources/jquery/jquery-plugins.js"></script>
+	<link type="text/css" rel="stylesheet"
+		href="#{request.contextPath}/faces/resources/css/layout-light.css" />
+	<link type="text/css" rel="stylesheet"
+		href="#{request.contextPath}/faces/resources/css/primeicons.css" />
+	<title>Systema de Inventario</title>
 </h:head>
 <h:body>
-${holaMundo.saludo}	
+	<h:form>
 
-	<br />
-	<br />
-	<h:link outcome="/page/content.xhtml">Ingresar a menu</h:link>
+		<div class="login-wrapper">
+			<div class="login-panel">
+				<a href="dashboard.html" class="logo"><img id="j_idt8" src=""
+					alt="" /></a>
+				<div class="login-form">
+					<p:panel>
+						<center>
+							<h1>BIENVENIDO</h1>
+						</center>
+						<div align="center">iniciar sesión</div>
+						<center>
+							<img class="responsive-img" src="" style="max-width: 100px;" />
+						</center>
+						<div align="center">
+							<p:panelGrid columns="2" cellpadding="8"
+								styleClass="ui-panelgrid-blank">
+								<h:outputLabel value="Usuario" />
+								<p:inputText id="codHojaRuta"
+									value="#{loginBean.user}"
+									styleClass="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all"></p:inputText>
+
+								<h:outputLabel value="Contraseña:" />
+								<h:inputSecret id="password" required="true"
+									value="#{loginBean.pass}"
+									requiredMessage="Contraseña Requerido!"
+									styleClass="ui-password ui-inputfield ui-widget ui-state-default ui-corner-all" />
+
+								<br></br>
+								<p:commandButton value="Login"
+									action="#{loginBean.login}"
+									styleClass="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"></p:commandButton>
+							</p:panelGrid>
+						</div>
+					</p:panel>
+
+					<script id="email_s" type="text/javascript">
+						$(function() {
+							PrimeFaces.cw("InputText", "widget_email", {
+								id : "email"
+							});
+						});
+					</script>
+					<script id="password_s" type="text/javascript">
+						$(function() {
+							PrimeFaces.cw("Password", "widget_password", {
+								id : "password"
+							});
+						});
+					</script>
+
+					<script id="j_idt10_s" type="text/javascript">
+						$(function() {
+							PrimeFaces.cw("CommandButton", "widget_j_idt10", {
+								id : "j_idt10"
+							});
+						});
+					</script>
+				</div>
+			</div>
+		</div>
+	</h:form>
 </h:body>
 </html>
